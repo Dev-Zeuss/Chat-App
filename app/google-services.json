@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "199985621941",
+    "project_id": "chat-me-37",
+    "storage_bucket": "chat-me-37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199985621941:android:dfb3700f9d0da913e3c7fc",
+        "android_client_info": {
+          "package_name": "com.zeus.chatme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199985621941-4gjv8ulf4pv102jre43eus99228ovfes.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgzEHqQVRn5MNZmpSVqOfrt29UyWzdnvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199985621941-4gjv8ulf4pv102jre43eus99228ovfes.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

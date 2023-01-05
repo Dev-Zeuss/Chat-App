@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".PostActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar_"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false">
+
+            <ImageView
+                android:id="@+id/postCloseBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_close" />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBar_"
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/image_added"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/default_dp_2"
+            android:adjustViewBounds="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/conL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/appBar_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <VideoView
+            android:id="@+id/video_added"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/playIV"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/ic_online_dot"
+            android:padding="7dp"
+            android:visibility="gone"
+            android:backgroundTint="@color/black2"
+            android:src="@drawable/ic_play_2"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/messageLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/custom_bg_3">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="7dp">
+
+                <ImageView
+                    android:id="@+id/emojiKeyboardBtn"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    app:tint="@color/white"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_emoji3"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+            <com.vanniktech.emoji.EmojiEditText
+                android:id="@+id/enterMessageET"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:emojiSize="23sp"
+                android:ems="10"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="2dp"
+                android:focusable="true"
+                android:textColorHint="@color/black2"
+                android:hint="Message"
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+                android:gravity="top|start"
+                android:fontFamily="@font/roboto_regular"
+                android:scrollbars="vertical"
+                android:scrollbarSize="2dp"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textColor="@color/black2"
+                android:textCursorDrawable="@drawable/cursor_drawable"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/sendMessageBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/custom_bg_3"
+            android:paddingStart="7dp"
+            android:paddingEnd="3dp"
+            app:tint="@color/black2"
+            android:layout_marginStart="7dp"
+            android:paddingTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/ic_send"/>
+    </LinearLayout>
+
+</RelativeLayout>

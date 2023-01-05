@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/chat_bg_2"
+    tools:context=".SearchUserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/bar"
+        android:background="@color/main_blue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_blue">
+
+            <ImageView
+                android:id="@+id/searchBackButton"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:clickable="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:tint="@color/white"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                android:layout_gravity="center"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/searchUsersInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search Users..."
+                android:inputType="textAutoComplete"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_gravity="center"
+                android:maxLength="20"
+                android:layout_toEndOf="@id/searchBackButton"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/cursor_drawable_4"
+                android:textSize="18sp"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/very_light_gray"
+                app:met_hideUnderline="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_below="@id/searchUsersInput"
+                android:layout_toEndOf="@id/searchBackButton"
+                android:background="@color/grey"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chat_bg_2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatSearchRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/chat_bg_2"/>
+
+        <TextView
+            android:id="@+id/userNotFoundTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="User not found"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noInternetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_wifi"
+            android:alpha="0.5"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/noInternetText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Internet Connection."
+            android:alpha="0.5"
+            android:textSize="17sp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:layout_below="@id/iv"/>
+
+    </RelativeLayout>
+</LinearLayout>

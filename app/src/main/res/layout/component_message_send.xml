@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint3_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/chat_sender_bubble"
+        android:maxWidth="270dp"
+        android:minHeight="30dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="13dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="3dp"
+            android:inputType="textLongMessage|textMultiLine"
+            android:maxWidth="220dp"
+            android:focusable="false"
+            android:minWidth="50dp"
+            android:enabled="false"
+            android:lineSpacingExtra="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/white"
+            tools:text="Sender text"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintBottom_toTopOf="@id/senderTime_"/>
+
+        <TextView
+            android:id="@+id/senderTime_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:text="12:00pm"
+            android:visibility="invisible"
+            android:textSize="5sp"
+            android:fontFamily="@font/roboto_medium"
+            android:enabled="false"
+            android:textColor="@color/main_blue"
+            app:layout_constraintEnd_toStartOf="@id/seenStatusIcon_"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/seenStatusIcon_"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/unseen_icon"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

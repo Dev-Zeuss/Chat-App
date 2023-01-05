@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/root_view"
+    android:layout_height="match_parent"
+    tools:context=".chatSection.ChatDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_"
+        android:layout_width="match_parent"
+        android:background="@color/main_blue"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:background="@color/main_blue"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/chatDetailsBackButton"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_back"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_marginStart="15dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_centerVertical="true"
+                app:tint="@color/white" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/chatDetailUserDp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/default_dp_2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/chatDetailsBackButton"
+                android:layout_toStartOf="@id/chatDetailUserDp">
+
+                <TextView
+                    android:id="@+id/chatDetailsUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/chatDetailsUserOnlineStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    tools:text="Online"
+                    android:textAlignment="center"
+                    android:textSize="13sp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatDetailRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar_"
+        android:layout_above="@+id/typingStatusAnimation"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/typingStatusAnimation"
+        android:layout_width="70dp"
+        android:layout_height="5dp"
+        android:layout_above="@id/linearLayout"
+        android:layout_marginStart="5dp"
+        android:visibility="invisible"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:background="@color/chat_bg"
+        android:orientation="vertical"
+        android:paddingBottom="5dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"/>
+
+        <com.devlomi.record_view.RecordView
+            android:id="@+id/recordView"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:slide_to_cancel_arrow="@drawable/ic_back_2"
+            app:slide_to_cancel_text="Slide to cancel"
+            app:slide_to_cancel_arrow_color="@color/main_blue"/>
+
+        <LinearLayout
+            android:id="@+id/chatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageBtn"
+                    android:layout_width="35dp"
+                    android:layout_height="45dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:focusable="true"
+                    android:layout_marginStart="5dp"
+                    android:clickable="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/ic_camera" />
+
+                <ImageView
+                    android:id="@+id/videoBtn"
+                    android:layout_width="35dp"
+                    android:layout_height="45dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:layout_marginEnd="5dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/main_blue"
+                    android:src="@drawable/ic_video_2" />
+
+                <com.devlomi.record_view.RecordButton
+                    android:id="@+id/audioBtn"
+                    android:layout_width="35dp"
+                    android:layout_height="45dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    android:clickable="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/main_blue"
+                    app:mic_icon="@drawable/ic_mic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/messageLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:backgroundTint="@color/main_blue"
+                    android:background="@drawable/custom_bg_3">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="7dp">
+
+                        <ImageView
+                            android:id="@+id/emojiKeyboardBtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:tint="@color/white"
+                            android:src="@drawable/ic_emoji3"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <com.vanniktech.emoji.EmojiEditText
+                        android:id="@+id/enterMessageET"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:emojiSize="23sp"
+                        android:ems="10"
+                        android:background="@android:color/transparent"
+                        android:layout_marginEnd="2dp"
+                        android:focusable="true"
+                        android:textColorHint="@color/white"
+                        android:hint="Message"
+                        android:inputType="textMultiLine"
+                        android:maxLines="4"
+                        android:gravity="top|start"
+                        android:fontFamily="@font/roboto_regular"
+                        android:scrollbars="vertical"
+                        android:scrollbarSize="2dp"
+                        android:padding="10dp"
+                        android:singleLine="false"
+                        android:textColor="@color/white"
+                        android:textCursorDrawable="@drawable/cursor_drawable_4"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/sendMessageBtn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:backgroundTint="@color/main_blue"
+                    android:background="@drawable/custom_bg_3"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    app:tint="@color/white"
+                    android:layout_marginStart="7dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginEnd="7dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/ic_send2"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

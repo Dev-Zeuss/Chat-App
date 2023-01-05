@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_sender"
+        android:layout_width="5dp"
+        android:layout_height="40dp"
+        android:visibility="invisible"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="3dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/profile_image_sender"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/chat_sender_bubble"
+        android:maxWidth="270dp"
+        android:minHeight="30dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:id="@+id/show_message_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="3dp"
+            android:inputType="textLongMessage|textMultiLine"
+            android:maxWidth="220dp"
+            android:focusable="false"
+            android:minWidth="50dp"
+            android:enabled="false"
+            android:lineSpacingExtra="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/white"
+            android:text="Sender text"
+            app:emojiSize="23sp"
+            android:textSize="18sp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintBottom_toTopOf="@id/senderTime"/>
+
+        <TextView
+            android:id="@+id/senderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:text="12:00pm"
+            android:textSize="10sp"
+            android:fontFamily="@font/roboto_medium"
+            android:enabled="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/seenStatusIcon"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/seenStatusIcon"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/unseen_icon"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

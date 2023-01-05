@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/chat_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Message?"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:layout_gravity="start"/>
+
+    <TextView
+        android:id="@+id/deleteMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE FOR ME"
+        android:textSize="18sp"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="15dp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black3"
+        android:layout_gravity="end"/>
+
+    <TextView
+        android:id="@+id/deleteEveryone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DELETE FOR EVERYONE"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black3"
+        android:layout_gravity="end"/>
+
+    <TextView
+        android:id="@+id/cancelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black3"
+        android:layout_gravity="end"/>
+</LinearLayout>

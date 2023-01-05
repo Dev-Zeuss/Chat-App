@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ChatMe" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_blue</item>
+        <item name="colorPrimaryVariant">@color/main_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="toolbarStyle">@style/Toolbar_Theme</item>
+
+        <item name="colorControlHighlight">@color/tap_color</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.ChatHome" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_blue</item>
+        <item name="colorPrimaryVariant">@color/main_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorControlHighlight">@color/tap_color</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert" >
+        <item name="colorAccent">@color/main_blue</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black2</item>
+    </style>
+
+    <style name="MyDialogStyle3" parent="Theme.AppCompat.Light.Dialog.Alert" >0
+        <item name="colorAccent">@color/black3</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black3</item>
+    </style>
+
+    <style name="Toolbar_Theme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/white</item>
+        <item name="materialThemeOverlay">@style/Toolbar_ThemeOverlay</item>
+    </style>
+
+    <style name="Toolbar_Theme.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Toolbar_ThemeOverlay" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_bg_2"
+    android:orientation="vertical"
+    tools:context=".FeedBackActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolBarFeedBack"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_blue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_blue" >
+
+            <ImageView
+                android:id="@+id/backBtnFeedBack"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="6dp"
+                android:focusable="true"
+                app:tint="@color/white"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FeedBack"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/backBtnFeedBack"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/myEmail"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:met_textColor="@color/black2"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        app:met_hideUnderline="true"
+        android:enabled="false"
+        android:text="ztechservice397@gmail.com"
+        android:fontFamily="@font/roboto_medium"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/emailSubject"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:met_textColor="@color/black2"
+        android:textSize="20sp"
+        android:textCursorDrawable="@drawable/cursor_drawable"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        app:met_hideUnderline="true"
+        android:maxLines="1"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:singleLine="true"
+        android:hint="Subject"
+        app:met_textColorHint="@color/gray"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/emailMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:met_hideUnderline="true"
+        app:met_textColor="@color/black2"
+        android:textSize="20sp"
+        android:textCursorDrawable="@drawable/cursor_drawable"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_marginStart="5dp"
+        android:hint="Message"
+        android:fontFamily="@font/roboto_medium"
+        app:met_textColorHint="@color/gray"
+        android:minHeight="100dp"
+        android:maxLines="5"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/sendFeedbackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:padding="10dp"
+        android:backgroundTint="@color/main_blue"
+        android:textSize="15sp"
+        android:layout_gravity="end"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
